@@ -8,7 +8,7 @@ import 'View/home_screen.dart';
 void main() async {
 
   SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
+    const SystemUiOverlayStyle(
       statusBarColor: Color(0xFF0298b1),
       statusBarBrightness: Brightness.dark,
     ),
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => HomeScreen(),
+          builder: (context, state) => const HomeScreen(),
         ),
         // GoRoute(
         //   path: '/Kart',

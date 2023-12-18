@@ -5,6 +5,8 @@ import 'package:shopsify/View/Widgets/ItemsView.dart';
 import '../../Provider/home_screen_provider.dart';
 import 'dart:convert';
 
+import 'Widgets/ItemAlertBox.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
@@ -28,12 +30,23 @@ class HomeScreen extends StatelessWidget {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: CustomItems(
-                          bestSeller: watchData[i + j]['bestSeller'],
-                          dealOfTheDay: watchData[i + j]['dealOfTheDay'],
-                          name: watchData[i + j]['name'],
-                          image: watchData[i + j]['image'],
-                          offer: watchData[i + j]['offer'],
+                        child: GestureDetector(
+                          child: CustomItems(
+                            bestSeller: watchData[i + j]['bestSeller'],
+                            dealOfTheDay: watchData[i + j]['dealOfTheDay'],
+                            name: watchData[i + j]['name'],
+                            image: watchData[i + j]['image'],
+                            offer: watchData[i + j]['offer'],
+                          ),
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return  ItemDetailsDialog(name: watchData[i + j]['name'],
+                                  image: watchData[i + j]['image'],price: watchData[i + j]['price'], bestSeller: watchData[i + j]['bestSeller'],);
+                              },
+                            );
+                          },
                         ),
                       ),
                     ),
