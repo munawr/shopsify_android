@@ -29,32 +29,28 @@ class CustomItems extends StatelessWidget {
                   Image.network(
                     '$image',
                     width: double.infinity,
-                    height: 130.0,
+                    height: 180.0,
                     fit: BoxFit.cover,
                   ),
                   Column(
                     children: [
                       Row(
                         children: [
-                          Positioned(
-                            top: 0,
-                            right: 0,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8.0, vertical: 4.0),
-                              color: Color(0xFF0298b1),
-                              child: Text(
-                                '$bestSeller',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0, vertical: 4.0),
+                            color: const Color(0xFF0298b1),
+                            child: Text(
+                              '$bestSeller',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
-                            icon: Icon(Icons.favorite),
+                            icon: const Icon(Icons.favorite),
                             color: Colors.grey,
                             onPressed: () {
                               // Handle like button press
@@ -78,13 +74,13 @@ class CustomItems extends StatelessWidget {
                             color: Colors.red,
                             child: Text(
                               '$offer',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.0,
                               ),
                             ),
-                          ),SizedBox(width: 8,),
-                          Expanded(
+                          ),const SizedBox(width: 8,),
+                          const Expanded(
                             child: Text(
                               'Deal of the Day',
                               maxLines: 2,
@@ -105,7 +101,7 @@ class CustomItems extends StatelessWidget {
                           '$name ',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold,
                           ),
