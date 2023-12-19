@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopsify/View/Widgets/CustomAppBar.dart';
 import 'package:shopsify/View/Widgets/ItemsView.dart';
-import '../../Provider/home_screen_provider.dart';
+import 'package:shopsify/Provider/home_screen_provider.dart';
 import 'dart:convert';
 
 import 'Widgets/ItemAlertBox.dart';
@@ -64,6 +64,27 @@ class HomeScreen extends StatelessWidget {
                 appBar: const CustomAppBar(),
                 body: ListView(
                   children: rows,
+                ),
+                bottomNavigationBar:  BottomNavigationBar(
+                  items: const [
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label: 'Home',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.shopping_cart),
+                      label: 'Kart',
+                    ),
+                  ],
+                  onTap: (index) {
+                    HomeScreen();
+                    if (index == 0) {
+                      // Navigate to Home screen
+                    } else if (index == 1) {
+                      HomeScreen();
+                      // Navigate to Kart screen
+                    }
+                  },
                 ),
               );
             } else {

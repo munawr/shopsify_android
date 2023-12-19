@@ -27,7 +27,7 @@ class ItemDetailsDialog extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
             content: SingleChildScrollView(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -35,8 +35,8 @@ class ItemDetailsDialog extends StatelessWidget {
                     child: Container(
                       height: 430,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Colors.blue, Colors.green],
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF0298b1), Color(0xFF7CD857)],
                         ),
                         borderRadius: BorderRadius.circular(40.0),
                       ),
@@ -59,7 +59,7 @@ class ItemDetailsDialog extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               IconButton(
-                                  onPressed: () {GoRouter.of(context).pop();}, icon: Icon(Icons.close)),
+                                  onPressed: () {GoRouter.of(context).pop();}, icon: const Icon(Icons.close)),
                             ],
                           ),
                           Stack(
@@ -109,38 +109,38 @@ class ItemDetailsDialog extends StatelessWidget {
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),),
-                          SizedBox(height: 11,),
+                          const SizedBox(height: 11,),
                           Container(
                               width: 120,
                               height: 30,
                               decoration: BoxDecoration(
-                                  color: Color(0xE5B6B6B6),
+                                  color: const Color(0xE5B6B6B6),
                                   border: Border.all(color: Colors.black)),
-                              child: Center(child: Text("See all Details"))),
-                          SizedBox(
+                              child: const Center(child: Text("See all Details"))),
+                          const SizedBox(
                             height: 10,
                           ),
                           Container(
                               width: 120,
                               height: 30,
                               decoration: BoxDecoration(
-                                  color: Color(0xFFEA9800),
+                                  color: const Color(0xFFEA9800),
                                   border: Border.all(color: Colors.black)),
                               child: Center(
                                   child: Text("Price: ${price ?? 'N/A'}"))),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Qty:'),
+                              const Text('Qty:'),
                               IconButton(
-                                icon: Icon(Icons.remove),
+                                icon: const Icon(Icons.remove),
                                 onPressed: () {
                                   data.quantityDecrement();
                                 },
                               ),
                               Text(' ${data.quantity}'),
                               IconButton(
-                                icon: Icon(Icons.add),
+                                icon: const Icon(Icons.add),
                                 onPressed: () {
                                   data.quantityIncrement();
                                 },
