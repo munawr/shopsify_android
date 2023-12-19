@@ -131,8 +131,9 @@ class ItemDetailsDialog extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               // Add the item to Kart when the button is clicked
-                              data.addToKart(name, image, price, bestSeller);
-                              GoRouter.of(context).pop();
+                              data.getItems();
+                              // data.addToKart(name, image, price, bestSeller);
+                              // GoRouter.of(context).pop();
                             },
                             child: Container(
                               width: 140,

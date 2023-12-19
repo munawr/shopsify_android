@@ -1,31 +1,27 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:shopsify/Model/item_model.dart';
+
+import '../Model/ItemsList.dart';
 
 class HomeScreenProvider extends ChangeNotifier {
   int quantity = 1;
-  // final GoRouter router = GoRouter(
-  //   routes: [
-  //     GoRoute(
-  //       path: '/',
-  //       builder: (context, state) => const HomeScreen(),
-  //     ),
-  //     GoRoute(
-  //       path: '/Home',
-  //       builder: (context, state) => const HomeScreen(),
-  //     ),
-  //     GoRoute(
-  //       path: '/Kart',
-  //       builder: (context, state) => const KartScreen(),
-  //     ),
-  //   ],
-  // );
+  ItemsModel items = ItemsModel();
+  List<ItemsModel> itemsList = [];
 
   final FlutterSecureStorage _secureStorage = FlutterSecureStorage();
   List<Map<String, String>> kartItems = [];
   HomeScreenProvider() {
     // Load quantity from secure storage during initialization
     _loadQuantity();
+    getItems();
+  }
+  getItems() {
+    List<ItemsModel> listItems =
+        ItemsList.jsonData.map((item) => ItemsModel.fromJson(item)).toList();
+    itemsList = listItems;
+    print(itemsList);
   }
 
   addToKart(String? name, String? image, String? price, String? bestSeller) {
@@ -42,6 +38,7 @@ class HomeScreenProvider extends ChangeNotifier {
 
     notifyListeners();
   }
+
   _saveKartItems() async {
     await _secureStorage.write(key: 'kartItems', value: json.encode(kartItems));
   }

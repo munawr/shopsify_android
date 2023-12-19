@@ -26,11 +26,7 @@ class KartScreen extends StatelessWidget {
                   itemCount: data.kartItems.length,
                   itemBuilder: (context, index) {
                     final item = data.kartItems[index];
-                    return ListTile(
-                      title: Text(item['name'] ?? ''),
-                      subtitle: Text(item['price'] ?? ''),
-
-                    );
+                    return Container(height: 100, width: 100, color: Colors.orange, child: Text(item['name'] ?? ''),);
                   },
                 ),
                 bottomNavigationBar: BottomNavigationBar(
