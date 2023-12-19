@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:shopsify/View/kart_screen.dart';
 import 'Provider/home_screen_provider.dart';
 import 'View/home_screen.dart';
 
@@ -26,6 +27,14 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: '/',
           builder: (context, state) => const HomeScreen(),
+        ),
+        GoRoute(
+          path: '/Home',
+          builder: (context, state) => const HomeScreen(),
+        ),
+        GoRoute(
+          path: '/Kart',
+          builder: (context, state) => const KartScreen(),
         ),
         // GoRoute(
         //   path: '/Kart',

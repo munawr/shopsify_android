@@ -128,6 +128,23 @@ class ItemDetailsDialog extends StatelessWidget {
                                   border: Border.all(color: Colors.black)),
                               child: Center(
                                   child: Text("Price: ${price ?? 'N/A'}"))),
+                          GestureDetector(
+                            onTap: () {
+                              // Add the item to Kart when the button is clicked
+                              data.addToKart(name, image, price, bestSeller);
+                              GoRouter.of(context).pop();
+                            },
+                            child: Container(
+                              width: 140,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: const Color(0xFFEA9800),
+                                border: Border.all(color: Colors.black),
+                              ),
+                              child: Center(child: Text("Add to Kart")),
+                            ),
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

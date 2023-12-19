@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:shopsify/View/Widgets/CustomAppBar.dart';
 import 'package:shopsify/View/Widgets/ItemsView.dart';
@@ -77,12 +78,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                   onTap: (index) {
-                    HomeScreen();
                     if (index == 0) {
-                      // Navigate to Home screen
+                      GoRouter.of(context).go('/Home');
                     } else if (index == 1) {
-                      HomeScreen();
-                      // Navigate to Kart screen
+                      GoRouter.of(context).go('/Kart');
                     }
                   },
                 ),
