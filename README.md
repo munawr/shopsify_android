@@ -12,6 +12,8 @@ Secure Storage for Local Storage: The app incorporates secure storage mechanisms
 Flutter,
 Dart,
 Git.
+
+## Screenshots: 
 ![3](https://github.com/munawr/shopsify_android/assets/106265891/975c757c-8506-4637-a357-0c909b6ed395)
 ![2](https://github.com/munawr/shopsify_android/assets/106265891/e41dcf7c-b0e2-46a1-a4b7-43b9092e9bf1)
 ![1](https://github.com/munawr/shopsify_android/assets/106265891/b38306f2-d30f-4770-ac20-d3e538737c79)
